@@ -1,0 +1,28 @@
+plugins {
+    id 'scala'
+    id 'maven-publish'
+}
+
+group = 'com.notifications.integrator.core'
+version = project.findProperty("artifactVersion") ?: "1.0.0-ALPHA"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+ext {
+    scalaCompatVersion = '3'
+    scalaPackageVersion = '3.1.+' // https://mvnrepository.com/artifact/org.scala-lang/scala3-library
+    scalaTestVersion = '3.2.+' // https://mvnrepository.com/artifact/org.scalatest/scalatest
+}
+
+dependencies {
+    implementation "org.scala-lang:scala3-library_$scalaCompatVersion:$scalaPackageVersion"
+    testImplementation "org.scalatest:scalatest_$scalaCompatVersion:$scalaTestVersion"
+}

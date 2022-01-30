@@ -1,2 +1,5 @@
 rootProject.name = 'integrator'
+include 'collector'
+include 'platform'
+include 'build-plugin'
 

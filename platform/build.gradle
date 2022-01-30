@@ -1,0 +1,18 @@
+plugins {
+    id 'java-platform'
+}
+
+ext {
+    scalaCompatVersion = '3'
+    scalaLoggingVersion = '3.9.+' // https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging
+    sl4jToLog4jVersion = '1.7.+' // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+}
+
+dependencies {
+    constraints {
+        api "com.typesafe.scala-logging:scala-logging_$scalaCompatVersion:$scalaLoggingVersion"
+        api "org.slf4j:slf4j-log4j12:$sl4jToLog4jVersion"
+    }
+}
+
+javaPlatform.allowDependencies()
